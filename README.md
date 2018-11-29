@@ -1,2 +1,2 @@
 # CSV-Parser
-Parse CSV-data to a PHP-Array
+Parse CSV-data to a JSON-Object
