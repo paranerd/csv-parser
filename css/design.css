@@ -1,0 +1,17 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#result {
+  margin-top: 30px;
+}
+
+input {
+	display: none !important;
+}
+
+.hidden {
+  display: none;
+}
