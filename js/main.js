@@ -1,27 +1,35 @@
 window.onload = function () {
-    // Init text loader
-    document.getElementById("text-loader").addEventListener('click', function () {
-        this.querySelector('input').click();
-    });
+  // Init text loader
+  document.getElementById('text-loader').addEventListener('click', function () {
+    this.querySelector('input').click();
+  });
 
-    document.querySelector('#text-loader input').addEventListener('change', function () {
-        readFile(this.files[0], displayText);
-    });
+  const fileInput = document.querySelector('#text-loader input');
+
+  fileInput.addEventListener('change', (e) => {
+    readFile(e.target.files[0], displayText);
+
+    // Clear input to trigger change event on file reload
+    fileInput.value = '';
+  });
 };
 
 function displayText(text) {
-    let elements = CSV_Parser.parse(text);
-    $("#result").removeClass("hidden").text(JSON.stringify(elements, null, 4));
+  const elements = CSV_Parser.parse(text);
+  const result = document.getElementById('result');
+  const resultContainer = document.getElementById('result-container');
+  resultContainer.classList.remove('hidden');
+  result.innerText = JSON.stringify(elements, null, 4);
 }
 
 function readFile(file, callback) {
-    let reader = new FileReader();
+  const reader = new FileReader();
 
-    reader.onload = function() {
-        callback(reader.result);
-    };
+  reader.onload = function () {
+    callback(reader.result);
+  };
 
-    if (file.type.match(/^text/)) {
-        reader.readAsText(file);
-    }
+  if (file.type.match(/^text/)) {
+    reader.readAsText(file);
+  }
 }

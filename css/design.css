@@ -4,14 +4,47 @@ body {
   width: 100%;
 }
 
-#result {
-  margin-top: 30px;
-}
-
 input {
 	display: none !important;
 }
 
 .hidden {
   display: none;
+}
+
+.container {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+  color: #001c00;
+}
+
+.btn {
+  padding: 15px;
+  width: fit-content;
+  height: 50px;
+  background: #036c5f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #025043;
+}
+
+#result-container {
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  background-color: #eee;
+  border-radius: 5px;
 }
